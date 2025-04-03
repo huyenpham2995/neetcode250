@@ -4,11 +4,10 @@ class MyHashSet:
         self.set = [False] * self.set_size
 
     def add(self, key: int) -> None:
-        index = key % self.set_size
-        self.set[index] = True
+        self.set[key] = True
 
     def remove(self, key: int) -> None:
-        self.set[key%self.set_size] = False
+        self.set[key] = False
 
     def contains(self, key: int) -> bool:
-        return self.set[key%self.set_size]
+        return self.set[key]
