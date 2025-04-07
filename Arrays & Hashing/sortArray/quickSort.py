@@ -8,4 +8,7 @@ def quickSortRecursion(nums: List[int]) -> List[int]:
     left_arr = [num for num in nums[1:] if num <= pivot]
     right_arr = [num for num in nums[1:] if num > pivot]
 
-    return sortArray(left_arr) + [pivot] + sortArray(right_arr)
+    return quickSortRecursion(left_arr) + [pivot] + quickSortRecursion(right_arr)
+
+def quickSortIterative(nums: List[int]) -> List[int]:
+    

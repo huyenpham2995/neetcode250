@@ -39,3 +39,5 @@ The slowest of them all. The smallest element slowly "bubble" up to the first po
 ## Heap Sort
 
 ## Quick Sort
+- BigO: worst case O(N^2) (depends on how we choose the pivot), best case O(N)
+- Space: O(N)
