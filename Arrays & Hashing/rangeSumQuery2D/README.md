@@ -11,9 +11,9 @@ https://leetcode.com/problems/range-sum-query-2d-immutable/
       - For the current row of this slot, as we travel through this row, we can keep track of the sum from the beginning of the row to the current slot (the yellow region).
       - The prefix sum of the current slot is the sum of those 2, and can always be calculated in O(1) time.
       - Store the sum in the "equivalent" position in the prefix sum array.
-  -  Now after finish calculating the prefix sum, we can calculate any region within this 2D array.
-  
+   
     ![region sum](IMG_4765.heic)
+  -  Now after finish calculating the prefix sum, we can calculate any region within this 2D array.
       - Basically, the bolded region will be calculated by taking the prefix sum of the bottom slot (the yellow region), minus the prefix sum of the red regions (prefix sum of (2,0) and prefix sum of (0,2) in this example) and add back prefix sum of (0,0) (because the 2 red regions overlapped there so it was deducted 2 times).
       - For the edge case of having to calculate the sum in the edge of the array, moving left or up from it will cause index out-of-range, that is why our prefix sum array will have 1 more row and one more column. The extra slots will be all 0 to compensate for these edge cases.
       - The region sum that we need will be: `prefix sum of (row2,col2) - prefix sum of (row2,col1-1) - prefix sum of (row1-1,col2) + prefix sum of (row1-1, col1-1)`, which will be calculated in O(1) time.
