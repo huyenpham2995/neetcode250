@@ -7,4 +7,4 @@ https://leetcode.com/problems/binary-tree-postorder-traversal/
 
 # BigO
 - Time: O(N)
-- Space: O(N)
+- Space: O(N) m
